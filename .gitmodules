@@ -1,0 +1,15 @@
+[submodule "meta-greatbear"]
+	path = meta-greatbear
+	url = https://github.com/krickwix/meta-greatbear.git
+[submodule "poky"]
+	path = poky
+	url = https://git.yoctoproject.org/poky
+[submodule "meta-openembedded"]
+	path = meta-openembedded
+	url = https://git.openembedded.org/meta-openembedded
+[submodule "meta-security"]
+	path = meta-security
+	url = https://git.yoctoproject.org/meta-security
+[submodule "meta-virtualization"]
+	path = meta-virtualization
+	url = https://git.yoctoproject.org/meta-virtualization
