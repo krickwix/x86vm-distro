@@ -37,7 +37,7 @@ pipeline {
                    host: 'http://10.60.16.240:9199', 
                    includes: 'build/tmp_glibc/deploy/images/**/*.vmdk'
             }
-
+        }
     }
     post {
         // Clean after build
