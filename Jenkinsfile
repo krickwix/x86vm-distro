@@ -18,9 +18,8 @@ pipeline {
         stage("build") {
             steps {
                 withEnv(['LANG="C"']) {
-                    sh("export TEMPLATECONF=$PWD/meta-greatbear//conf/template-gbeos && \
+                    sh("export TEMPLATECONF=$PWD/meta-greatbear/conf/template-gbeos && \
                     . poky/oe-init-build-env  && \
-                    setup-env --machine jetson-nano-devkit-emmc --distro tegrademo && \
                     bitbake gbeos-minimal")
                 }
             }
