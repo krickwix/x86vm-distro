@@ -4,7 +4,7 @@ pipeline {
         stage ('dependencies') {
             steps {
                 withEnv(['DEBIAN_FRONTEND=noninteractive']) {
-                    sh('sudo apt -y update && sudo apt -y upgrade && sudo apt -y install openjdk-11-jdk build-essential gcc-8 g++-8 git bmap-tools chrpath diffstat zstd')
+                    sh('sudo apt-get -y update && sudo apt-get -y upgrade && sudo apt-get -y install openjdk-11-jdk build-essential gcc-8 g++-8 git bmap-tools chrpath diffstat zstd')
                 }
             }
         }
@@ -18,8 +18,7 @@ pipeline {
         stage("build") {
             steps {
                 withEnv(['LANG="C"']) {
-                    sh("export TEMPLATECONF=$PWD/meta-greatbear/conf/template-gbeos && \
-                    . poky/oe-init-build-env  && \
+                    sh(". setupenv  && \
                     bitbake gbeos-minimal")
                 }
             }
