@@ -25,7 +25,7 @@ pipeline {
         }
         stage("artefacts") {
             steps {
-                archiveArtifacts artifacts: 'build/tmp_glibc/deploy/images/**/*.vmdk',
+                archiveArtifacts artifacts: 'build/tmp-glibc/deploy/images/**/*.vmdk',
                    allowEmptyArchive: true,
                    fingerprint: true,
                    onlyIfSuccessful: true
@@ -33,7 +33,7 @@ pipeline {
                    credentialsId: 'minio_gbear-user',
                    targetFolder: 'jenkins-build/',
                    host: 'http://10.60.16.240:9199', 
-                   includes: 'build/tmp_glibc/deploy/images/**/*.vmdk'
+                   includes: 'build/tmp-glibc/deploy/images/**/*.vmdk'
             }
         }
     }
