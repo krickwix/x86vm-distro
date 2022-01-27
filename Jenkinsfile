@@ -19,7 +19,8 @@ pipeline {
             steps {
                 withEnv(['LANG="C"']) {
                     sh(". setupenv  && \
-                    bitbake gbeos-minimal")
+                    bitbake gbeos-minimal && \
+                    MACHINE=qemuarm64 bitbake gbeos-minimal")
                 }
             }
         }
