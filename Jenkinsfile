@@ -29,7 +29,7 @@ pipeline {
                    allowEmptyArchive: true,
                    fingerprint: true,
                    onlyIfSuccessful: true
-                minio bucket: 'gbear-yocto-images/x86vm', 
+                minio bucket: 'gbear-yocto-images-vm', 
                    credentialsId: 'minio_gbear-user',
                    targetFolder: 'jenkins-build/',
                    host: 'http://10.60.16.240:9199', 
