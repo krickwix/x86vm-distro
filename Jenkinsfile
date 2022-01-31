@@ -1,7 +1,6 @@
 pipeline {
     agent {
     	  docker { image 'docker.io/krickwix/ybuild:latest' }
-    	  label 'docker'
     }
     stages {
         stage ('dependencies') {
