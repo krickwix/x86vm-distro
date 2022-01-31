@@ -3,13 +3,6 @@ pipeline {
     	  docker { image 'docker.io/krickwix/ybuild:latest' }
     }
     stages {
-        stage ('dependencies') {
-            steps {
-                withEnv(['DEBIAN_FRONTEND=noninteractive']) {
-                    sh('apt-get -y update && apt-get -y upgrade && apt-get -y install openjdk-11-jdk build-essential gcc-8 g++-8 git bmap-tools chrpath diffstat zstd')
-                }
-            }
-        }
         stage('scm') {
             steps {
                 withEnv(['LANG="C"']) {
