@@ -6,7 +6,7 @@ pipeline {
         stage ('dependencies') {
             steps {
                 withEnv(['DEBIAN_FRONTEND=noninteractive']) {
-                    sh('sudo apt-get -y update && sudo apt-get -y upgrade && sudo apt-get -y install openjdk-11-jdk build-essential gcc-8 g++-8 git bmap-tools chrpath diffstat zstd')
+                    sh('apt-get -y update && apt-get -y upgrade && apt-get -y install openjdk-11-jdk build-essential gcc-8 g++-8 git bmap-tools chrpath diffstat zstd')
                 }
             }
         }
