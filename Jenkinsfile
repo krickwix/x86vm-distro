@@ -1,13 +1,8 @@
 pipeline {
-    agent { label 'yocto'}
+    agent {
+    	  docker { image 'docker.io/krickwix/ybuild:latest' }
+    }
     stages {
-        stage ('dependencies') {
-            steps {
-                withEnv(['DEBIAN_FRONTEND=noninteractive']) {
-                    sh('sudo apt-get -y update && sudo apt-get -y upgrade && sudo apt-get -y install openjdk-11-jdk build-essential gcc-8 g++-8 git bmap-tools chrpath diffstat zstd')
-                }
-            }
-        }
         stage('scm') {
             steps {
                 withEnv(['LANG="C"']) {
